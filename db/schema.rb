@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210801114830) do
+ActiveRecord::Schema.define(version: 20210801132952) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "customer_id"
@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 20210801114830) do
     t.string   "name"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "last__name"
     t.string   "first_name"
     t.string   "last_name_kana"
     t.string   "first_name_kana"
     t.string   "postal_code"
     t.string   "address"
-    t.string   "telephone_code"
     t.boolean  "is_active"
+    t.string   "last_name"
+    t.string   "telephone_number"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end

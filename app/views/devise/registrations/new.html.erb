@@ -2,23 +2,23 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  
+
    <b>名前</b>
       <div class="field mt-2">
       <%= f.label :first_name, "(姓)" %>
       <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-      
-      <%= f.label :last_name, "(名)" %>
-      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+
+      <%= f.label :last__name, "(名)" %>
+      <%= f.text_field :last__name, autofocus: true, autocomplete: "last__name" %>
       </div>
 
       <b>フリガナ</b>
       <div class="field mt-2">
-      <%= f.label :kana_first_name, "(セイ)" %>
-      <%= f.text_field :kana_first_name, autofocus: true, autocomplete: "first_name" %>
-      
-      <%= f.label :kana_last_name, "(メイ)" %>
-      <%= f.text_field :kana_last_name, autofocus: true, autocomplete: "last_name" %>
+      <%= f.label :first_name_kana, "(セイ)" %>
+      <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name" %>
+
+      <%= f.label :last_name_kana, "(メイ)" %>
+      <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last__name" %>
       </div>
 
       <div class="field mt-3">
@@ -51,7 +51,7 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
    <% end %>
-  
+
 
   <div class="actions mt-4">
     <%= f.submit "この内容で登録", class: "btn btn-primary" %>
