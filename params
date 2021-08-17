@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ec2-user/environment/nagano_cake/app/controllers/orders_controller.rb:12 OrdersController#confirm:
+
+     [1;34m7[0m:   [32mend[0m
+     [1;34m8[0m: 
+     [1;34m9[0m:   [32mdef[0m [1;34mconfirm[0m
+    [1;34m10[0m:     binding.pry
+    [1;34m11[0m: 
+ => [1;34m12[0m:     @cart_items = current_customer.cart_items
+    [1;34m13[0m:     @total = [1;34m0[0m
+    [1;34m14[0m:     @cart_items.each [32mdo[0m |cart_item|
+    [1;34m15[0m:       tal = (cart_item.item.price* [1;35m1.1[0m).floor* cart_item.amount
+    [1;34m16[0m:       @total += tal
+    [1;34m17[0m:     [32mend[0m
+
