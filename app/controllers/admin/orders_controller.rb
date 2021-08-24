@@ -6,7 +6,7 @@ class Admin::OrdersController < ApplicationController
     #商品合計
     @total = 0
     @order_items.each do |order_item|
-      tol = order_item.item.price * order_item.amount
+      tol = order_item.item.price * order_item.amount.to_i
       @total += tol 
     end
   end

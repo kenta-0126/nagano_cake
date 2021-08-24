@@ -1,35 +1,67 @@
-<h1>商品登録</h1>
-<div class="row">
-<div class="col-xs-9">
-<%= form_with model: @item, local:true do |f| %>
-    
-    <div class="form-group has-icon">
-      <%= f.label :image, "商品画像" %><br />
-      <%= f.attachment_field :image %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1>商品登録</h1>
+      
+      <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
+          
+          <div class="form-group has-icon">
+            <tr>
+              <th>商品画像</th>
+              <td><%= f.attachment_field :image %></td>
+            </tr>
+          </div>
+          
+          <div class="form-group has-icon">
+            <tr>
+              <th>商品名</th>
+              <td><%= f.text_field :name, class:"form-control" %></td>
+            </tr>
+          </div>
+          
+          <div class="form-group has-icon">
+            <tr>
+              <th>商品説明</th>
+              <td><%= f.text_area :introduction, class:"form-control" %></td>
+            </tr>
+          </div>
+          
+          <div class="form-group has-icon">
+            <tr>
+              <th>ジャンル</th>
+              <td><%= f.select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+            </tr>
+          </div>
+          
+          <div class="form-group has-icon">
+            <tr>
+              <th>税抜価格</th>
+              <td><%= f.text_field :price, class:"form-control" %></td>
+            </tr>
+          </div>
+          
+          <div class="form-group has-icon">
+            <tr>
+              <th>販売ステータス</th>
+              <td>
+                <%= f.radio_button :is_active, :on_sale, checked: "checked"%>
+                <%= f.label :is_active, "有効", {value: :"0", style: "display: inline-block;"} %>
+                <%= f.radio_button :is_active, :off_sale %>
+                <%= f.label :is_active, "無効", {value: :"1", style: "display: inline-block;"} %>
+             </td>
+            </tr>
+          </div>
+          
+          <div class="form-group">
+            <tr>
+              <th></th>
+              <td>
+                <%= f.submit "新規登録", class:"btn btn-primary btn-block btn-base-1 mt-20" %>
+              </td>
+            </tr>
+          </div>
+          
+        <% end %>
     </div>
-    <div class="form-group has-icon">
-      <%= f.label :name, "商品名" %>
-      <%= f.text_field :name, class:"form-control" %>
-    </div>
-    <div class="form-group has-icon">
-      <%= f.label :introduction, "商品説明" %>
-      <%= f.text_area :introduction, class:"form-control" %>
-    </div>
-    <div class="form-group has-icon">
-      <%= f.label :genre_id, "商品種別" %><br />
-      <%= f.select :genre_id, Genre.all.collect { |g| [ g.name, g.id ] }, {}, {class: 'form-control'} %>
-    </div>
-    <div class="form-group has-icon">
-      <%= f.label :price, "税抜価格" %>
-      <%= f.text_field :price, class:"form-control" %>
-    </div>
-    <div class="form-group has-icon">
-      <%= f.radio_button :is_active, :on_sale, checked: "checked"%>
-       <%= f.label :is_active, "有効", {value: :"0", style: "display: inline-block;"} %>
-       <%= f.radio_button :is_active, :off_sale %>
-       <%= f.label :is_active, "無効", {value: :"1", style: "display: inline-block;"} %>
-    </div>
-    <%= f.submit "新規登録", class:"btn btn-primary btn-block btn-base-1 mt-20" %>
-  <% end %>
   </div>
-  </div>
+</div>
