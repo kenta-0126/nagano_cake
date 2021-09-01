@@ -29,7 +29,7 @@
           <div class="form-group has-icon">
             <tr>
               <th>ジャンル</th>
-              <td><%= f.select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+              <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
             </tr>
           </div>
           
