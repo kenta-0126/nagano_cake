@@ -1,6 +1,6 @@
 <h2 class="md-4">新規会員登録画面</h2>
 
-<%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
+<%= form_with model: @customer, id: 'new_customer', class: 'new_customer', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
    
@@ -57,7 +57,7 @@
 
 
   <div class="actions mt-4">
-    <%= f.submit "新規登録", class: "btn btn-primary" %>
+    <%= f.submit "新規登録",class: "btn btn-primary" %>
 
 <% end %>
 
@@ -65,4 +65,3 @@
 <p><%= link_to "こちら", customer_session_path %>から登録をお願いします</p>
 
 
-<%= render "devise/shared/links" %>
