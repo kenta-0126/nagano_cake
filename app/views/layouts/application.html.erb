@@ -10,12 +10,15 @@
   </head>
 
   <body>
-    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <header class="d-flex flex-column p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 
       <nav class="navbar navbar-expand-lg ">
         <div class="container">
           <%= link_to "秘密のケーキ屋さん", root_path, class: "h4 my-0 me-md-auto fw-normal" %>
-          <ul class="navbar-nav nav navbar-right">
+
+         
+
+          <ul class="navbar-nav ml-auto">
 
             <% if customer_signed_in? %>
 
@@ -76,6 +79,7 @@
             </li>
             <% end %>
           </ul>
+          
         </div>
       </nav>
     </header>

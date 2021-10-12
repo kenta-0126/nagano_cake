@@ -2,20 +2,20 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2 class="label">商品一覧<p>(全<%= @items.count %>件)</p></h2>
-        
+
         <div class="d-flex justify-content-around">
         <% @items.each do |item| %>
             <div class="col colmb-3">
-              
+
               <%= attachment_image_tag item, :image, format: 'jpeg', class: "bd-placeholder-img card-img-top", fallback: "ithigo.jpg", height: "180" %>
               <div class="card-body">
                 <h5 class="card-title"><%= link_to item.name, item_path(item.id) %></h5>
                 <p class="card-text"><%= item.price %>円</p>
-                
+
               </div>
             </div>
         <% end %>
         </div>
       </div>
     </div>
-</div> 
+</div>

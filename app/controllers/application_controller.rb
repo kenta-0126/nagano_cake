@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
    def after_sign_in_path_for(resource)
       if current_customer
-         customers_my_page_path
+         root_path
       else Admin
           #　指定したいパスに変更
       end
