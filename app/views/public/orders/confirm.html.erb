@@ -7,14 +7,18 @@
 
    <div class="col-md-7">
 
-    <% @cart_items.each do |cart_item| %>
           <table class="table table-bordered">
-            <tr class="table-secondary">
+            <thead>
+              <tr class="table-secondary">
               <th>商品名</th>
               <th>単価(税込)</th>
               <th>数量</th>
               <th>小計</th>
-            </tr>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <% @cart_items.each do |cart_item| %>
             <tr>
               <td>
                 <%= attachment_image_tag cart_item.item, :image, format: 'jpeg', class: "rounded float-left", fallback: "ithigo.jpg", height: "50"  %>
@@ -23,10 +27,13 @@
               <td><%= (cart_item.item.price * 1.1).floor.to_s(:delimited, delimiter: ',') %></td>
               <td><%= cart_item.amount %></td>
               <td><%= ((cart_item.item.price * 1.1) * (cart_item.amount)).floor.to_s(:delimited, delimiter: ',') %></td>
-            </tr>
+            </tr> 
+            <% end %>
+            </tbody>
+          
           </table>
 
-    <% end %>
+   
    </div>
 
 
@@ -64,8 +71,8 @@
      </tr>
    </table>
    </div>
-   
-      
+
+
 
     </div>
       <%= link_to "注文を確定する", orders_path, method: :post, class: "btn btn-primary col-md-4 mx-auto" %>

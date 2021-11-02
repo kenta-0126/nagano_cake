@@ -23,7 +23,7 @@
               〒<%= order.postal_code %><br>
                 <%= order.address %><br>
                 <%=order.name %></td>
-            <td><% order.order_items.each do |order_item| %><%= order_item.item.name %><% end %></td>
+            <td><% order.order_items.each do |order_item| %><%= order_item.item.name %><br><% end %></td>
             <td>
               <% @sum = 0 %>
               <% order.order_items.each do |order_item| %>

@@ -24,7 +24,7 @@ class Public::CartItemsController < ApplicationController
   def empty
     CartItem.destroy_all
     flash[:notice] = "カートを空にしました"
-    redirect_to root_path
+    redirect_to cart_items_path
   end
   
   def create

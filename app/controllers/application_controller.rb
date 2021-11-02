@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
- before_action :authenticate_customer!,except: [:top, :about]
- 
- 
+
+
+
  before_action :configure_permitted_parameters, if: :devise_controller?
 
 
@@ -9,13 +9,17 @@ class ApplicationController < ActionController::Base
       if current_customer
          root_path
       else Admin
-          #　指定したいパスに変更
+          admin_root_path
       end
    end
 
 
-    def after_sign_out_path_for(resource)
-        root_path
+    def after_sign_out_path_for(resource_or_scope)
+        if resource_or_scope == :customer
+         root_path
+        elsif resource_or_scope == :admin
+          admin_session_path
+        end
     end
 
     def configure_permitted_parameters

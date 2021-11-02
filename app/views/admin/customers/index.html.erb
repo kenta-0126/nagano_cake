@@ -18,13 +18,8 @@
       　　　  <td><%= customer.id %></td>
       　　　  <td><%= link_to customer.full_name, admin_customer_path(customer)%></td>
       　　　  <td><%= customer.email %></td>
-      　　　 
-          　　　<% if customer.deleted_at %>
-            　削除済み
-          　　<% end %>
-      　　　  
+      　　   <td><%= customer.is_active %></td>
       　　　</tr>
-          　　<br>
       　　　<% end %>
 　　</div>　
 　</div>　　

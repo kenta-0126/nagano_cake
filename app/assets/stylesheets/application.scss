@@ -14,3 +14,8 @@
  *= require_self
  */
 @import "bootstrap";
+
+.jumbotron {
+   background: url(top.jpg);
+   background-size: cover;
+}

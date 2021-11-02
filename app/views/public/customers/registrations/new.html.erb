@@ -15,14 +15,11 @@
            
            <tr>
              <th>フリガナ</th>
-             <td><%= f.label :first_name_kana, "(セイ)" %></td>
-             <td><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %></td>
+             <td><%= f.label :first_name_kana, "(セイ)" %><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %></td>
+             <td><%= f.label :last_name_kana, "(メイ)" %><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %></td>
            </tr>
            
-           <tr>
-             <th><%= f.label :last_name_kana, "(メイ)" %></th>
-             <td><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %></td>
-           </tr>
+           
            
            <tr>
              <th><%= f.label :email, "メールアドレス", style:"font-weight:bold" %></th>
