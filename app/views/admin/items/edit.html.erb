@@ -15,7 +15,7 @@
           <div class="form-group has-icon">
             <tr>
               <th>商品名</th>
-              <td><%= f.text_field :name, class:"" %></td>
+              <td><%= f.text_field :name, class:"form-control" %></td>
             </tr>
           </div>
           
@@ -23,7 +23,7 @@
             <tr>
               <th>商品説明</th>
               <td>
-                <%= f.text_area :introduction %>
+                <%= f.text_area :introduction, class:"form-control" %>
               </td>
             </tr>
           </div>
@@ -32,16 +32,16 @@
             <tr>
               <th>ジャンル</th>
               <td>
-                <%= f.select :genre_id, Genre.all.collect { |g| [ g.name, g.id ] }, {}, {class: 'form-control'} %>
+                <%= f.select :genre_id, Genre.all.collect { |g| [ g.name, g.id ] }, {} %>
               </td>
             </tr>
           </div>
           
-          <div class="form-group has-icon">
+          <div class="form-group d-flex flex-row">
             <tr>
               <th>税抜価格</th>
               <td>
-                <%= f.text_field :price, class:"form-control" %>円
+                <%= f.text_field :price %><span>円</span>
               </td>
             </tr>
           </div>
@@ -51,9 +51,9 @@
               <th>販売ステータス</th>
               <td>
                  <%= f.radio_button :is_active, :on_sale %>
-              　　 <%= f.label :is_active, "有効", {value: :true, style: "display: inline-block;"} %>
+              　　 <%= f.label :is_active, "販売中", {value: :true, style: "display: inline-block;"} %>
               　　 <%= f.radio_button :is_active, :off_sale %>
-              　　 <%= f.label :is_active, "無効", {value: :false, style: "display: inline-block;"} %>
+              　　 <%= f.label :is_active, "販売停止中", {value: :false, style: "display: inline-block;"} %>
               </td>
             </tr>
           </div>

@@ -1,23 +1,34 @@
-<body class="text-center">
-  <main class="form-signin">
+<div class="container">
+    <div class="row">
     <h2>管理者ログイン</h2>
+     <div class="col-md-10 text-center">
     
     <%= form_with model: resource, scope: resource_name, url: session_path(resource_name) do |f| %>
+    <table class="table table-borderless">
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-controllers", placeholder: "sample@example.com" %></td>
+      </tr>
       </div>
     
       <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+    　<tr>
+    　   <th>パスワード</th>
+    　   <td><%= f.password_field :password, autocomplete: "current-password", class: "form-controllers" %></td>
+    　</tr>
       </div>
     
       <div class="actions">
-        <%= f.submit "ログイン" %>
+      <tr>
+        <th></th>
+        <td><%= f.submit "ログイン", class: "btn btn-secondary" %></td>
+      </tr>
       </div>
+    </table>
     <% end %>
    
 
-  </main>
-</body>
+    </div>
+  </div>
+</div>

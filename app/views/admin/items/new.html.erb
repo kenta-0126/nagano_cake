@@ -2,44 +2,45 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h1>商品登録</h1>
-      
+
+          <table class="table table-borderless">
       <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
-          
+
           <div class="form-group has-icon">
             <tr>
               <th>商品画像</th>
               <td><%= f.attachment_field :image %></td>
             </tr>
           </div>
-          
+
           <div class="form-group has-icon">
             <tr>
               <th>商品名</th>
-              <td><%= f.text_field :name, class:"form-control" %></td>
+              <td><%= f.text_field :name, class:"form-control", placeholder: "商品名" %></td>
             </tr>
           </div>
-          
+
           <div class="form-group has-icon">
             <tr>
               <th>商品説明</th>
-              <td><%= f.text_area :introduction, class:"form-control" %></td>
+              <td><%= f.text_area :introduction, class:"form-control", placeholder: "ここに説明文を記述します" %></td>
             </tr>
           </div>
-          
+
           <div class="form-group has-icon">
             <tr>
               <th>ジャンル</th>
               <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
             </tr>
           </div>
-          
-          <div class="form-group has-icon">
+
+          <div class="form-group has-icon d-flex flex-row">
             <tr>
               <th>税抜価格</th>
-              <td><%= f.text_field :price, class:"form-control" %></td>
+              <td><%= f.text_field :price, placeholder: "1000" %><span>円</span></td>
             </tr>
           </div>
-          
+
           <div class="form-group has-icon">
             <tr>
               <th>販売ステータス</th>
@@ -51,17 +52,18 @@
              </td>
             </tr>
           </div>
-          
+
           <div class="form-group">
             <tr>
               <th></th>
               <td>
-                <%= f.submit "新規登録", class:"btn btn-primary btn-block btn-base-1 mt-20" %>
+                <%= f.submit "新規登録", class:"btn btn-primary btn-block" %>
               </td>
             </tr>
           </div>
-          
+
         <% end %>
+          </tabel>
     </div>
   </div>
 </div>
