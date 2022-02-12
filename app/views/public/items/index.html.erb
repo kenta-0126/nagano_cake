@@ -3,15 +3,17 @@
     <div class="col-md-10 col-md-offset-1">
       <h2 class="label">商品一覧<p>(全<%= @items.count %>件)</p></h2>
 
-        <div class="d-flex justify-content-around">
+        <div class="row row-cols-1 row-cols-md-4 mb-4 text-center">
         <% @items.each do |item| %>
             <div class="col col-mb-3">
-
-              <%= link_to attachment_image_tag(item, :image, format: 'jpeg', class: "bd-placeholder-img card-img-top", fallback: "ithigo.jpg", height: "180"), item_path(item.id) %>
+              <div class="item">
+                
+              <%= link_to attachment_image_tag(item, :image, format: 'jpg', class: "bd-placeholder-img card-img-top", fallback: "ithigo.jpg", height: "180"), item_path(item.id) %>
               <div class="card-body">
                 <h5 class="card-title"><%= link_to item.name, item_path(item.id) %></h5>
-                <p class="card-text"><%= item.price %>円</p>
+                <p class="card-text">￥<%= item.price.floor.to_s(:delimited, delimiter: ',') %></p>
 
+              </div>
               </div>
             </div>
         <% end %>

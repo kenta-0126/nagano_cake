@@ -15,8 +15,8 @@
   <h2 class="new-items">新着商品</h2><br>
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
   <% @items.each.with_index(1) do |item| %>
-      <div class="col-xs-3">
-        <div class=" mb-3">
+      <div class=" col col-md-3">
+        
 
           <div class="item">
             <%= link_to item_path(item.id) do %>
@@ -25,7 +25,7 @@
             <h5 class="item-name"><%= item.name %></h5>
             <p class="item-price">￥<%= item.price.to_s(:delimited, delimiter: ',') %></p>
             <%= link_to "この商品を見る", item_path(item.id), class: "btn btn-primary" %>
-          </div>
+          
         </div>
       </div>
     <% end %>

@@ -5,10 +5,10 @@
 
           
             <%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
-            <br>
+            
             <label class="label-name col-md-4">ジャンル名</label>
             <%= f.text_field :name, class: "col-md-4", placeholder: "ジャンル名" %>
-            <%= f.submit "新規登録", class: "btn btn-primary" %>
+            <%= f.submit "新規登録", class: "btn btn-success" %>
             <% end %>
             
         <table class="table">
@@ -23,7 +23,7 @@
 
         　　　<tr>
         　　　  <td><%= genre.name %></td>
-        　　　  <td><%= link_to "編集する", edit_admin_genre_path(genre),  class: "btn btn-primary" %></td>
+        　　　  <td><%= link_to "編集する", edit_admin_genre_path(genre),  class: "btn btn-success" %></td>
 
         　　　</tr>
 

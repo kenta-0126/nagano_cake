@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h1>商品登録</h1>
+      <h2>商品登録</h2>
+    <div class="col-md-8">
 
-          <table class="table table-borderless">
       <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
+          <table class="table table-borderless">
 
           <div class="form-group has-icon">
             <tr>
@@ -57,7 +57,7 @@
             <tr>
               <th></th>
               <td>
-                <%= f.submit "新規登録", class:"btn btn-primary btn-block" %>
+                <%= f.submit "新規登録", class:"btn btn-success" %>
               </td>
             </tr>
           </div>

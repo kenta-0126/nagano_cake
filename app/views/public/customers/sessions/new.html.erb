@@ -1,26 +1,26 @@
    <div class="container">
+    <h2>ログイン</h2>
     <div class="row">
      <div class="col-md-10 col-md-offset-1">
-    <h2>ログイン</h2>
 
-    <h3>会員の方はこちらからログイン</h3>
+    <h4>会員の方はこちらからログイン</h4>
 
     <%= form_with(model: resource, scope: resource_name, url: session_path(resource_name)) do |f| %>
     <table class="table table-borderless text-center">
       <tr>
         <th>メールアドレス</th>
-        <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "sample@example.com" %></td>
       </tr>
       
       <tr>
         <th>パスワード</th>
-        <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+        <td><%= f.password_field :password, autocomplete: "current-password", class: "form-control" %></td>
       </tr>
       
       <div class="actions">
       <tr>
         <th></th>
-        <td><%= f.submit "ログイン", class: "btn btn-secondary" %></td>
+        <td><%= f.submit "ログイン", class: "btn btn-primary" %></td>
       </tr>
       </div>
     </table>

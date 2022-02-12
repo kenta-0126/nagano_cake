@@ -3,40 +3,40 @@
     <div class="col-md-10 col-md-offset-1">
       <h3>マイページ</h3>
 
-      
+
         <table class="table table-borderless">
           <tr>
             <th class="h5">登録情報</th>
-            <td><%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-info" %></td>
+            <td><%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-success" %></td>
           </tr>
         </table>
 
 
       <div class="mypage-center">
-      <table class ="table">
+      <table class ="table table-bordered">
           <tbody>
               <tr>
-                  <th width="20%" class ="carum_title">氏名</th>
+                  <th width="20%" class ="table-secondary">氏名</th>
                   <td class ="carum_date"><%= @customer.first_name %> <%= @customer.last_name %></td>
               </tr>
               <tr>
-                  <th class ="carum_title">カナ</th>
+                  <th class ="table-secondary">カナ</th>
                   <td class ="carum_date"><%= @customer.first_name_kana %> <%= @customer.last_name_kana %></td>
               </tr>
               <tr>
-                  <th class ="carum_title">郵便番号</th>
+                  <th class ="table-secondary">郵便番号</th>
                   <td class ="carum_date"><%= @customer.postal_code %></td>
               </tr>
               <tr>
-                  <th class ="carum_title">住所</th>
+                  <th class ="table-secondary">住所</th>
                   <td class ="carum_date"><%= @customer.address %></td>
               </tr>
               <tr>
-                  <th class ="carum_title">電話番号</th>
+                  <th class ="table-secondary">電話番号</th>
                   <td class ="carum_date"><%= @customer.telephone_number %></td>
               </tr>
               <tr>
-                  <th class ="carum_title">メールアドレス</th>
+                  <th class ="table-secondary">メールアドレス</th>
                   <td class ="carum_date"><%= @customer.email %></td>
               </tr>
           </tbody>
@@ -45,12 +45,12 @@
       <table class="table table-borderless">
         <tr>
           <th class="h5">配送先</th>
-          <td><%= link_to "一覧を見る", addresses_path(@customer), class: "btn btn-info" %></td>
+          <td><%= link_to "一覧を見る", addresses_path(@customer), class: "btn btn-primary" %></td>
         </tr>
 
         <tr>
           <th class="h5">注文履歴</th>
-          <td><%= link_to "一覧を見る", orders_path, class: "btn btn-info" %></td>
+          <td><%= link_to "一覧を見る", orders_path, class: "btn btn-primary" %></td>
         </tr>
       </table>
 

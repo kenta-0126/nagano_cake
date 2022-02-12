@@ -44,27 +44,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def thanks
-    # order = Order.new
-    # order.bill = 1000
-    # order.status = 1
-    # order.customer_id = current_customer.id
-    # order.save
-    session[:order][:customer_id] = current_customer.id
-     puts session[:order]
-    @order = Order.new(session[:order])
-    @order.postage = 800
-    @order.save
-    cart_items = current_customer.cart_items
-    cart_items.each do |cart_item|
-      order_item = OrderItem.new
-      order_item.item_id = cart_item.item.id
-      order_item.making_status = 0
-      order_item.tax_price = (cart_item.item.price* 1.1).floor
-      order_item.amount = cart_item.amount
-      order_item.order_id = @order.id
-      order_item.save
-    end
-    cart_items.destroy_all
   end
 
   def create
@@ -89,7 +68,9 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-      @orders = Order.all
+      @customer = current_customer
+      @orders = @customer.orders
+
 
 
   end
